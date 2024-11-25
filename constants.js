@@ -6,4 +6,3 @@ exports.constants = {
     SERVER_ERROR: 500
 };
 
-exports.UNAUTHORISED

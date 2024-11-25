@@ -1,6 +1,7 @@
 const {constants} = require("../constants");
+
 const errorHandler = (err, req, res, next) => {
-    const statuscode = res.statuscode ? res.statuscode: 500;
+    const statuscode = res.statusCode ? res.statusCode: 500;
     switch (statuscode){
         case constants.VALIDATION_ERROR:
             res.json({
@@ -21,11 +22,12 @@ const errorHandler = (err, req, res, next) => {
             });
         case constants.FORBIDDEN:
             res.join({
-                title:"Access Forbidden"
+                title:"Access Forbidden",
+                message: "Unauthorized action",
             })
 
         default:
-            console.log("No Error, all good mate ");
+            console.log(err.message);
             break;
     }
 
