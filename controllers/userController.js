@@ -78,6 +78,7 @@ const loginUser = asyncHandler(async (req, res) => {
         );
 
         // Send the access token in the response
+        console.log("New User Loggedin")
         return res.status(200).json({ accessToken }); // Use return to avoid further execution
     } else {
         res.status(401);

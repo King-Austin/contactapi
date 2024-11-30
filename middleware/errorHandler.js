@@ -30,7 +30,7 @@ const errorHandler = (err, req, res, next) => {
             break; //break and return
         default:
             console.error(err.message, err.stack); // Log the error message
-            res.status(statusCode).json({
+            res.status(500).json({
                 title: "Internal Server Error",
                 message: "Oops, Something went wrong",
             });
